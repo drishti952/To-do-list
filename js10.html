@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Program 10</title>
+</head>
+<body>
+    <div class="container">
+        <h1>TO-DO LIST</h1>
+        <input type="text" id="taskInput" placeholder="Enter task">
+        <button onclick="addTask()">Add</button>
+        <ul id="taskList"></ul>
+    </div>
+    <script>
+        function addTask(){
+            const taskInput = document.getElementById("taskInput");
+            const taskText = taskInput.value.trim();
+            if (taskText !== ""){
+                const taskList = document.getElementById("taskList");
+                const listItem = document.createElement("li");
+                listItem.textContent = taskText;
+                taskList.appendChild(listItem);
+                taskInput.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
